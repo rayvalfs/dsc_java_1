@@ -1,0 +1,42 @@
+package hello;
+
+import org.joda.time.LocalTime;
+
+
+
+
+public class HelloWorld {
+
+ 
+
+
+  public static void main(String[] args) {
+    LocalTime currentTime = new LocalTime();
+    System.out.println("hwllo_world: HelloWorld.java: The current local time is: " + currentTime);
+
+    Greeter greeter = new Greeter();
+    System.out.println(greeter.sayHello());
+
+
+    LeaveRequestState state = LeaveRequestState.state_Submitted;
+    System.out.println(state.currentState());
+    System.out.println(state.responsiblePerson());
+
+    state = state.nextState();
+    System.out.println(state.currentState());
+    System.out.println(state.responsiblePerson());
+
+    state = state.nextState();
+    System.out.println(state.currentState());
+    System.out.println(state.responsiblePerson());
+
+    ProcessBuilderExample2 pb = new ProcessBuilderExample2();
+    try {
+      pb.runExternalCmd(args);
+    }
+    catch (Exception e) {
+      System.out.println("Something went wrong.");
+    }
+
+  }
+}
