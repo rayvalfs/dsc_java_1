@@ -8,6 +8,7 @@ package datasupplychain;
 
 public enum LeaveRequestState {
 
+  
     state_Submitted {
         @Override
         public LeaveRequestState nextState() {
