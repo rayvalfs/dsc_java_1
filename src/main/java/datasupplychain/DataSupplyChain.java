@@ -35,13 +35,13 @@ public class DataSupplyChain {
       pb.runExternalCmd(args);
     }
     catch (Exception e) {
-      System.out.println("Something went wrong.");
+      System.out.println("DataSupplyChain.java: ProcessBuilderExample2 exception");
     }
 
   try
       {
     //TezosWallet wallet = new TezosWallet("mypassphrase");                // Change later for a testnet wallet that you control and has funds.
-       TezosWallet wallet = new milfont.com.tezosj.model.TezosWallet ("mypassphrase");
+//       TezosWallet wallet = new milfont.com.tezosj.model.TezosWallet ("mypassphrase");
     //         System.out.println("PubKey hash:" + wallet.getPublicKeyHash());
     //         System.out.println("Mnemonic   : " + wallet.getMnemonicWords());
     //         System.out.println("Balance    : " + wallet.getBalance());

@@ -59,21 +59,47 @@ public enum SupplyChainStates {
         @Override
         public SupplyChainStates nextState() {
             System.out.println("state_Deidentified");
-            return state_Deidentified;
+            return state_Packaged;
         }
 
        @Override
         public String currentState() {
-            return "currentState: state_Deidentified";
+            return "currentState: state_Packaged";
     
         }
     },
-//end
-;
+    state_Packaged {
+       @Override
+       public SupplyChainStates nextState() {
+            System.out.println("state_Packaged");
+            return state_Distributed;
+	   }
 
-    public abstract String responsiblePerson();
+       @Override
+        public String currentState() {
+            return "currentState: state_Packaged";
 
-    public abstract LeaveRequestState nextState();
+        }
+    },
+   state_Distributed {
+       @Override
+       public SupplyChainStates nextState() {
+            System.out.println("state_Distributed");
+            return state_Distributed; //<-- This loops because it is the END STATE
+	   }
+
+       @Override
+        public String currentState() {
+            return "currentState: state_Distributed";
+
+        }
+    }
+; //<-- END OF ENUM
+
+
+//    public abstract String responsiblePerson();
+
+    public abstract SupplyChainStates nextState();
 
     public abstract String currentState();
 
